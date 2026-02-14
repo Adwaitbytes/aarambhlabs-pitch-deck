@@ -29,7 +29,7 @@ html,body{width:100%;height:100%;background:#060408;overflow:hidden;font-family:
 body{display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 80% 70% at 50% 50%,#0C0A0F 0%,#080610 40%,#040306 100%)}
 
 /* ━━━ FRAME 16:9 ━━━ */
-.frame{position:relative;width:100vw;height:56.25vw;max-height:100vh;max-width:177.78vh;overflow:hidden;background:var(--bg)}
+.frame{position:relative;width:100vw;height:56.25vw;max-height:100vh;max-width:177.78vh;overflow:hidden;background:var(--bg);box-shadow:0 0 120px 60px rgba(8,6,10,0.8)}
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    CLOTH BACKGROUND — WRINKLED FROM CENTER
@@ -346,13 +346,13 @@ body{display:flex;align-items:center;justify-content:center;background:radial-gr
 .logo-text{font-family:'JetBrains Mono',monospace;font-size:clamp(9px,0.65vw,11px);letter-spacing:5px;text-transform:uppercase;background:var(--gold-g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ━━━ SERVICES ROW ━━━ */
-.svc{display:flex;align-items:center;gap:clamp(14px,1.8vw,28px);padding:clamp(14px,1.3vw,22px) clamp(0px,0.6vw,10px);border-bottom:1px solid rgba(200,169,96,0.04);transition:all 0.4s;border-radius:6px}
-.svc:first-child{border-top:1px solid rgba(200,169,96,0.04)}
-.svc:hover{background:rgba(200,169,96,0.015);padding-left:clamp(10px,1vw,18px)}
-.svc-num{font-family:'JetBrains Mono',monospace;font-size:clamp(10px,0.8vw,13px);font-weight:500;min-width:clamp(26px,2.2vw,40px);color:var(--gold)}
-.svc-name{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(14px,1.1vw,18px);color:rgba(255,255,255,0.88);min-width:clamp(150px,14vw,220px)}
-.svc-desc{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(11px,0.8vw,13px);font-weight:400;color:var(--t2);flex:1;line-height:1.6}
-.svc-tech{font-family:'JetBrains Mono',monospace;font-size:clamp(8px,0.55vw,10px);color:var(--t3);text-align:right;min-width:clamp(120px,12vw,190px);line-height:2;letter-spacing:0.3px}
+.svc{display:flex;align-items:center;gap:clamp(20px,2.4vw,40px);padding:clamp(22px,2.2vw,38px) clamp(8px,1.2vw,20px);border-bottom:1px solid rgba(200,169,96,0.06);transition:all 0.4s;border-radius:8px}
+.svc:first-child{border-top:1px solid rgba(200,169,96,0.06)}
+.svc:hover{background:rgba(200,169,96,0.02);padding-left:clamp(16px,1.6vw,28px)}
+.svc-num{font-family:'JetBrains Mono',monospace;font-size:clamp(18px,1.5vw,26px);font-weight:600;min-width:clamp(40px,3.5vw,60px);background:linear-gradient(135deg,var(--gold-p) 0%,var(--gold) 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.svc-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(22px,2vw,36px);color:rgba(255,255,255,0.92);min-width:clamp(200px,18vw,320px);letter-spacing:-0.5px}
+.svc-desc{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(13px,1.05vw,17px);font-weight:400;color:var(--t2);flex:1;line-height:1.7}
+.svc-tech{font-family:'JetBrains Mono',monospace;font-size:clamp(10px,0.72vw,13px);color:var(--t3);text-align:right;min-width:clamp(140px,14vw,220px);line-height:2.1;letter-spacing:0.5px}
 
 /* ━━━ PROCESS ━━━ */
 .prc{display:flex;align-items:center;gap:clamp(18px,1.8vw,32px);padding:clamp(16px,1.4vw,24px) 0;border-bottom:1px solid rgba(200,169,96,0.04)}
@@ -394,16 +394,33 @@ body{display:flex;align-items:center;justify-content:center;background:radial-gr
 .usp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,0.95vw,18px)}
 
 /* ━━━ TEAM ━━━ */
-.team-grid{display:flex;gap:clamp(10px,0.95vw,16px);align-items:stretch}
-.team-card{flex:1;border-radius:14px;overflow:hidden;background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(16px);transition:all 0.45s;position:relative;display:flex;flex-direction:column}
-.team-card:hover{border-color:var(--border-h);transform:translateY(-4px);box-shadow:0 20px 56px rgba(0,0,0,0.35),0 0 1px rgba(200,169,96,0.15)}
-.team-card.founder{border-color:rgba(200,169,96,0.18)}
-.team-card.founder::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold-g)}
-.team-card .team-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;display:block;filter:grayscale(15%) contrast(1.05);transition:filter 0.45s}
-.team-card:hover .team-photo{filter:grayscale(0%) contrast(1.08)}
-.team-card .team-info{padding:clamp(12px,1.1vw,20px);flex:1;display:flex;flex-direction:column;gap:3px}
-.team-card .team-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(12px,1vw,17px);color:#fff}
-.team-card .team-role{font-family:'JetBrains Mono',monospace;font-size:clamp(7px,0.5vw,9px);letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);line-height:1.5}
+.team-grid{display:flex;gap:clamp(12px,1.1vw,20px);align-items:stretch}
+.team-card{flex:1;border-radius:16px;overflow:hidden;background:rgba(18,14,10,0.92);border:1px solid rgba(200,169,96,0.08);backdrop-filter:blur(16px);transition:all 0.5s;position:relative;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.team-card:hover{border-color:rgba(200,169,96,0.18);transform:translateY(-6px) scale(1.015);box-shadow:0 28px 72px rgba(0,0,0,0.5),0 0 1px rgba(200,169,96,0.15)}
+.team-card.founder{border-color:rgba(200,169,96,0.2)}
+.team-card.founder::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold-g);z-index:3}
+
+/* Photo wrapper — cinematic vintage film treatment */
+.photo-wrap{position:relative;overflow:hidden;background:#0a0806}
+/* Warm golden tint overlay */
+.photo-wrap::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(160,120,50,0.08);mix-blend-mode:color}
+/* Heavy vignette + film edge burn */
+.photo-wrap::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:
+  radial-gradient(ellipse 72% 68% at 50% 42%,transparent 25%,rgba(8,6,4,0.45) 70%,rgba(8,6,4,0.85) 100%),
+  linear-gradient(180deg,rgba(8,6,4,0.2) 0%,transparent 15%,transparent 60%,rgba(8,6,4,0.65) 100%),
+  linear-gradient(90deg,rgba(8,6,4,0.3) 0%,transparent 8%,transparent 92%,rgba(8,6,4,0.3) 100%)}
+
+.team-card .team-photo{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;
+  filter:sepia(38%) saturate(65%) contrast(1.12) brightness(0.82) grayscale(8%);
+  transition:filter 0.6s,transform 0.6s}
+.team-card:hover .team-photo{filter:sepia(18%) saturate(80%) contrast(1.1) brightness(0.9) grayscale(0%);transform:scale(1.06)}
+
+/* Film grain overlay on each photo */
+.photo-grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:128px 128px}
+
+.team-card .team-info{padding:clamp(16px,1.4vw,24px);flex:1;display:flex;flex-direction:column;gap:5px;position:relative;z-index:3;background:linear-gradient(180deg,rgba(18,14,10,0) 0%,rgba(18,14,10,0.4) 100%)}
+.team-card .team-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(14px,1.15vw,20px);color:rgba(255,255,255,0.92)}
+.team-card .team-role{font-family:'JetBrains Mono',monospace;font-size:clamp(8px,0.55vw,10px);letter-spacing:2px;text-transform:uppercase;color:var(--gold);line-height:1.5}
 .team-card.founder .team-role{background:var(--gold-g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ━━━ CONTACT ━━━ */
@@ -830,44 +847,59 @@ body{display:flex;align-items:center;justify-content:center;background:radial-gr
         <p class="body" data-a="2" style="max-width:clamp(280px,26vw,420px);text-align:right">A lean team of builders led by <b>Divyanshu Urmaliya</b>, co-founder of <b>Bhopal DAO</b> (2000+ members). Every person ships.</p>
       </div>
       <div class="team-grid" data-a="3">
-        <!-- Adwait Keshari -->
-        <div class="team-card">
-          <img class="team-photo" src="photos/photo_2026-02-15_00-44-09.jpg" alt="Adwait Keshari">
-          <div class="team-info">
-            <div class="team-name">Adwait Keshari</div>
-            <div class="team-role">Head of DevRel</div>
-          </div>
-        </div>
-        <!-- Pushpanjali Shukla -->
-        <div class="team-card">
-          <img class="team-photo" src="photos/photo_2026-02-15_00-44-09%20(2).jpg" alt="Pushpanjali Shukla">
-          <div class="team-info">
-            <div class="team-name">Pushpanjali Shukla</div>
-            <div class="team-role">Creative Head</div>
-          </div>
-        </div>
-        <!-- Divyanshu Urmaliya — FOUNDER -->
+        <!-- Divyanshu Urmaliya — Founder -->
         <div class="team-card founder">
-          <img class="team-photo" src="photos/photo_2026-02-15_00-44-17.jpg" alt="Divyanshu Urmaliya">
+          <div class="photo-wrap">
+            <img class="team-photo" src="photos/photo_2026-02-15_00-44-09.jpg" alt="Divyanshu Urmaliya" style="object-position:center 18%">
+            <div class="photo-grain"></div>
+          </div>
           <div class="team-info">
             <div class="team-name">Divyanshu Urmaliya</div>
             <div class="team-role">Founder</div>
           </div>
         </div>
-        <!-- Atharv -->
+        <!-- Pushpanjali Shukla — Creative Head -->
         <div class="team-card">
-          <img class="team-photo" src="photos/photo_2026-02-15_00-44-36.jpg" alt="Atharv">
+          <div class="photo-wrap">
+            <img class="team-photo" src="photos/photo_2026-02-15_00-44-09%20(2).jpg" alt="Pushpanjali Shukla" style="object-position:center 32%">
+            <div class="photo-grain"></div>
+          </div>
           <div class="team-info">
-            <div class="team-name">Atharv</div>
+            <div class="team-name">Pushpanjali Shukla</div>
+            <div class="team-role">Creative Head</div>
+          </div>
+        </div>
+        <!-- Atharv Shrivasava — Head of BD -->
+        <div class="team-card">
+          <div class="photo-wrap">
+            <img class="team-photo" src="photos/photo_2026-02-15_00-44-17.jpg" alt="Atharv Shrivasava" style="object-position:center 10%">
+            <div class="photo-grain"></div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Atharv Shrivasava</div>
             <div class="team-role">Head of BD</div>
           </div>
         </div>
-        <!-- Yatharth -->
+        <!-- Yatharth Urmaliya — Head of Operations -->
         <div class="team-card">
-          <img class="team-photo" src="photos/photo_2026-01-31_16-24-50.jpg" alt="Yatharth">
+          <div class="photo-wrap">
+            <img class="team-photo" src="photos/photo_2026-02-15_00-44-36.jpg" alt="Yatharth Urmaliya" style="object-position:center 14%">
+            <div class="photo-grain"></div>
+          </div>
           <div class="team-info">
-            <div class="team-name">Yatharth</div>
-            <div class="team-role">Head of Ops</div>
+            <div class="team-name">Yatharth Urmaliya</div>
+            <div class="team-role">Head of Operations</div>
+          </div>
+        </div>
+        <!-- Adwait Keshari — Head of DevRel -->
+        <div class="team-card">
+          <div class="photo-wrap">
+            <img class="team-photo" src="photos/photo_2026-02-15_00-55-31.jpg" alt="Adwait Keshari" style="object-position:center 15%">
+            <div class="photo-grain"></div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Adwait Keshari</div>
+            <div class="team-role">Head of DevRel</div>
           </div>
         </div>
       </div>
