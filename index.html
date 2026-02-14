@@ -464,6 +464,180 @@ body{display:flex;align-items:center;justify-content:center;background:radial-gr
 .nav-hint{position:absolute;bottom:clamp(12px,1.3vw,22px);left:clamp(26px,3.2vw,52px);font-family:'JetBrains Mono',monospace;font-size:clamp(8px,0.52vw,9px);color:rgba(255,255,255,0.06);letter-spacing:1.5px;z-index:100;text-transform:uppercase}
 .nav-fs{position:absolute;top:clamp(12px,1.3vw,22px);right:clamp(26px,3.2vw,52px);z-index:101;background:rgba(200,169,96,0.03);backdrop-filter:blur(8px);border:1px solid rgba(200,169,96,0.1);font-family:'JetBrains Mono',monospace;font-size:clamp(8px,0.52vw,9px);letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;border-radius:5px;transition:all 0.3s;color:rgba(200,169,96,0.35)}
 .nav-fs:hover{border-color:rgba(200,169,96,0.25);color:var(--gold)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE — MOBILE / TABLET
+   Desktop layout is untouched above.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media (max-width:1024px){
+  /* Frame: ditch 16:9 — fill screen on portrait devices */
+  .frame{width:100vw;height:100vh;max-width:100vw;max-height:100vh}
+
+  /* Slides: scrollable when content overflows */
+  .sl{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+
+  /* Content wrapper: tighter padding */
+  .ct{padding:clamp(52px,8vh,72px) clamp(24px,4vw,44px) clamp(32px,5vh,52px) !important}
+
+  /* Section labels */
+  .sec{top:16px;left:24px}
+
+  /* ─── HERO ─── */
+  #s1 .ct>.f.g1{flex-direction:column;gap:28px !important}
+  #s1 .ct>.f.g1>.f.fc.jc.g3{flex:unset}
+  #s1 .ct>.f.g1>.f.fc.jc.s0{flex:unset}
+  .hero-mock{width:100% !important;max-width:380px}
+  .h1{font-size:clamp(34px,7vw,56px);letter-spacing:-2px}
+
+  /* ─── ABOUT ─── */
+  #s2 .ct>.f.g1{flex-direction:column;gap:28px !important}
+  #s2 .f.fc.jc.g2{max-width:100% !important;flex:unset}
+  #s2 .f.fc.jc.g1{flex:unset;flex-direction:row;flex-wrap:wrap;gap:12px}
+  #s2 .f.fc.jc.g1>.gd{flex:1 1 calc(50% - 8px);min-width:140px}
+
+  /* ─── PORTFOLIO ─── */
+  .port-grid{grid-template-columns:1fr 1fr !important}
+
+  /* ─── ANALYTICS ─── */
+  .analytics-row{flex-wrap:wrap}
+  .analytics-card{flex:1 1 calc(50% - 12px) !important;min-width:140px}
+  .metrics-grid{grid-template-columns:1fr 1fr !important}
+  #s4 .f[style*="gap"]{flex-wrap:wrap}
+
+  /* ─── SERVICES ─── */
+  .svc{flex-wrap:wrap;gap:8px 20px !important;padding:18px 8px !important}
+  .svc-name{min-width:unset !important;flex:1 1 100%}
+  .svc-num{min-width:unset !important}
+  .svc-desc{flex:1 1 100%;order:3}
+  .svc-tech{text-align:left !important;min-width:unset !important;flex:1 1 100%;order:4}
+
+  /* ─── CREATOR STUDIO / AI AGENTS / MVP DEV ─── */
+  #s6 .ct>.f.g1,#s7 .ct>.f.g1,#s8 .ct>.f.g1{flex-direction:column;gap:24px !important}
+  #s6 .f.fc.jc.g2,#s7 .f.fc.jc.g2,#s8 .f.fc.jc.g2{max-width:100% !important;flex:unset}
+  #s6 .f.fc.jc.g1,#s7 .f.fc.jc.g1,#s8 .f.fc.jc.g1{flex:unset}
+
+  /* ─── PROCESS ─── */
+  .prc{flex-wrap:wrap;gap:10px 16px !important}
+  .prc .mono-sm{min-width:unset !important}
+  .prc .gd{min-width:unset !important;flex:1 1 auto}
+  .prc .svc-desc{flex:1 1 100%}
+
+  /* ─── PRICING ─── */
+  .pr-grid{flex-direction:column;gap:16px !important}
+  .pr-card{flex:unset}
+
+  /* ─── USP ─── */
+  .usp-grid{grid-template-columns:1fr 1fr !important}
+
+  /* ─── TEAM ─── */
+  .team-grid{flex-wrap:wrap;justify-content:center}
+  .team-card{flex:1 1 calc(33.33% - 16px) !important;min-width:clamp(120px,28vw,180px);max-width:220px}
+
+  /* ─── CONTACT ─── */
+  .contact-grid{flex-direction:column}
+  .contact-item{border-right:none !important;border-bottom:1px solid rgba(200,169,96,0.04)}
+  .contact-item:last-child{border-bottom:none}
+
+  /* Nav */
+  .nav-count{font-size:10px;right:16px;bottom:10px}
+  .nav-hint{display:none}
+  .nav-fs{top:14px;right:16px;font-size:9px;padding:4px 10px}
+}
+
+/* ─── SMALL PHONES ─── */
+@media (max-width:600px){
+  .ct{padding:48px 18px 28px !important}
+
+  /* Typography: override clamp for small screens */
+  .h1{font-size:clamp(28px,8vw,42px) !important;letter-spacing:-1.5px !important;line-height:1 !important}
+  .h2{font-size:clamp(24px,6.5vw,36px) !important;letter-spacing:-1.2px !important;line-height:1.02 !important}
+  .h3{font-size:clamp(20px,5.5vw,30px) !important}
+  .body{font-size:clamp(13px,3.5vw,16px) !important;line-height:1.7 !important}
+  .label{font-size:clamp(8px,2vw,10px) !important}
+
+  /* Stat values */
+  .stat-v{font-size:clamp(32px,9vw,48px) !important}
+  .a-val{font-size:clamp(24px,7vw,40px) !important}
+
+  /* Hero mockup */
+  .hero-mock{max-width:100%}
+  .hero-mock-item{font-size:11px;padding:8px 14px}
+  #s1 .f.ac[style*="gap:14px"]{flex-wrap:wrap}
+  .btn-p{padding:12px 24px !important;font-size:10px !important}
+  .btn-g{padding:10px 20px !important;font-size:10px !important}
+
+  /* Portfolio: single column */
+  .port-grid{grid-template-columns:1fr !important}
+  .port-card{padding:16px !important}
+
+  /* Analytics: single column */
+  .analytics-card{flex:1 1 100% !important}
+  .metrics-grid{grid-template-columns:1fr !important}
+  .metric-row{padding:10px !important}
+  .metric-row .m-name{min-width:unset !important;font-size:12px !important}
+  #s4 .f[style*="gap"]{gap:10px 16px !important;flex-direction:column}
+  #s4 .f[style*="gap"]>.f.ac{justify-content:flex-start}
+
+  /* Services */
+  .svc-name{font-size:clamp(16px,4.5vw,22px) !important}
+  .svc-num{font-size:clamp(14px,3.8vw,20px) !important}
+  .svc-desc{font-size:clamp(12px,3.2vw,15px) !important}
+  .svc-tech{font-size:clamp(9px,2.4vw,11px) !important}
+
+  /* Creator/AI/MVP cards */
+  .gw,.gd{padding:16px !important}
+  .card-title{font-size:clamp(13px,3.5vw,16px) !important}
+  .card-desc{font-size:clamp(11px,3vw,14px) !important}
+
+  /* Process */
+  .prc{flex-direction:column;align-items:flex-start !important;padding:14px 0 !important}
+
+  /* Pricing */
+  .pr-price{font-size:clamp(36px,10vw,56px) !important}
+  .pr-card.gw,.pr-card.gd{padding:20px !important}
+
+  /* USP: single column */
+  .usp-grid{grid-template-columns:1fr !important}
+
+  /* Team: 2 per row + centered */
+  .team-grid{gap:10px !important}
+  .team-card{flex:1 1 calc(50% - 10px) !important;min-width:0 !important;max-width:none !important}
+  .team-card .team-name{font-size:clamp(12px,3.2vw,16px) !important}
+  .team-card .team-role{font-size:clamp(7px,1.8vw,9px) !important}
+  .team-card .team-info{padding:10px 12px !important}
+  /* Team header */
+  #s12 .f.ac[style*="gap"]{flex-direction:column;gap:12px !important;align-items:flex-start !important}
+  #s12 .f.ac[style*="gap"] .body{text-align:left !important;max-width:100% !important}
+  #s12 .f.ac[style*="gap"] div[style*="height:1px"]{display:none}
+
+  /* Contact */
+  .contact-val{font-size:clamp(13px,3.5vw,16px) !important}
+  #s13 .f.ac[style*="gap"]{flex-direction:column;gap:12px !important;align-items:flex-start !important}
+  #s13 div[style*="text-align:right"]{text-align:left !important}
+  #s13 div[style*="height:1px"]{display:none}
+
+  /* Pill tags */
+  .pill{font-size:9px !important;padding:4px 10px !important}
+
+  /* Arrow list */
+  .ar{font-size:clamp(12px,3.2vw,14px) !important;padding:5px 0 !important}
+
+  /* Nav */
+  .nav-fs{display:none}
+  .nav-count{font-size:9px;right:12px;bottom:8px}
+  .sec{top:12px;left:16px}
+  .sec .label{font-size:9px !important}
+}
+
+/* ─── VERY SMALL (320px) ─── */
+@media (max-width:380px){
+  .ct{padding:44px 14px 24px !important}
+  .h1{font-size:24px !important}
+  .h2{font-size:20px !important}
+  .team-card{flex:1 1 100% !important}
+  .btn-p,.btn-g{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
